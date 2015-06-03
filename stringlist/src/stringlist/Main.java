@@ -1,7 +1,27 @@
 package stringlist;
 
+import java.util.Iterator;
+
 public class Main
 {
+    public static void oldschool(StringList scientists)
+    {
+        Iterator<String> it = scientists.iterator();
+        while (it.hasNext())
+        {
+            String scientist = it.next();
+            System.out.println(scientist);
+        }
+    }
+
+    public static void newschool(StringList scientists)
+    {
+        for (String scientist : scientists)
+        {
+            System.out.println(scientist);
+        }
+    }
+
     public static void main(String[] args)
     {
         StringList scientists = new StringList();
@@ -12,9 +32,7 @@ public class Main
         scientists.add("Feynman");
         scientists.add("Oppenheimer");
 
-        for (int i = 0; i < scientists.length(); ++i)
-        {
-            System.out.println(scientists.get(i));
-        }
+        //        oldschool(scientists);
+        newschool(scientists);
     }
 }
